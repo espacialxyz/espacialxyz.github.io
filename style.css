@@ -1,0 +1,381 @@
+/* CSS #01 â€” Reset y variables */
+:root {
+  --color-text: #000;
+  --color-bg: #fff;
+  --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --sidebar-left-width: 25%;
+  --sidebar-right-width: 20%;
+
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* CSS #02 â€” Columna izquierda (logo) */
+.sidebar-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-left-width);
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  position: relative;
+  width: 100%; /* asÃ­ el hover-text puede ocupar mÃ¡s espacio */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.logo-img {
+  max-width: 120px; /* logo mÃ¡s chico */
+  height: auto;
+  display: block;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.logo-hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 190px;
+  transform: translate(-50%, -50%);
+  text-align: right;
+  line-height: 1.3;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+/* Reemplazo suave: al hover, el logo se oculta y aparece el texto */
+.logo-container:hover .logo-img { opacity: 0; }
+.logo-container:hover .logo-hover-text { opacity: 1; }
+
+/* CSS #03 â€” Columna derecha (menÃº) centrada sin perder estilo */
+.sidebar-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar-right-width);
+  height: 100vh;
+  background: var(--color-bg);
+  padding: 0; /* el padding lo maneja el inner */
+}
+
+/* Contenedor interno: centra el bloque completo verticalmente */
+.sidebar-right-inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 2rem; /* aire interno */
+}
+
+/* Panel-brand solo para mÃ³vil (oculto en desktop) */
+/* Ocultar en desktop */
+.panel-brand {
+  display: none;
+}
+
+.panel-close {
+  display: none;
+}
+
+/* Mostrar solo en mÃ³vil */
+/* Mostrar solo en mÃ³vil */
+@media (max-width: 900px) {
+  .panel-brand {
+    display: block;
+    position: relative;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem; /* aire desde el borde superior */
+    padding-right: 2rem; /* espacio para el botÃ³n de cierre */
+    text-align: left; /* centra logo y texto */
+  }
+
+  .panel-close {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
+
+
+/* En desktop, ocultar botÃ³n de cierre */
+@media (min-width: 901px) {
+  .panel-close {
+    display: none;
+  }
+}
+
+
+/* CSS #04 â€” NavegaciÃ³n y submenÃºs */
+.nav-list { list-style: none; margin-bottom: 2rem; }
+
+.nav-link {
+  display: block;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
+  color: var(--color-text);
+  text-transform: lowercase;
+  transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.nav-group {
+  margin-top: 0.4rem; /* antes estaba mÃ¡s grande, ahora igual al resto */
+}
+
+.nav-toggle {
+  display: block;
+  margin-bottom: 0.4rem; /* mismo espacio para todos */
+  text-decoration: none;
+  color: var(--color-text);
+  text-transform: lowercase;
+  transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus { color: #555; }
+
+/* SubmenÃºs con microinteracciÃ³n suave */
+.nav-sublist {
+  list-style: none;
+  margin-left: 1rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.nav-sublist.open {
+  max-height: 600px; /* margen alto para permitir expansiÃ³n */
+  opacity: 1;
+}
+
+.nav-sublink {
+  display: block;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+}
+
+.nav-sublink:hover,
+.nav-sublink:focus {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* CSS #05 â€” Contenido central (posts) */
+.content {
+  margin-left: var(--sidebar-left-width);
+  margin-right: var(--sidebar-right-width);
+  padding: 2rem;
+}
+
+.post { margin-bottom: 3rem; }
+.post h2 { margin-bottom: 0.5rem; }
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tags {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.tags a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: text-decoration var(--transition-speed) ease;
+}
+
+.tags a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* CSS #06 â€” Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+  margin-left: var(--sidebar-left-width);
+  margin-right: var(--sidebar-right-width);
+}
+
+/* CSS #07 â€” Topbar mÃ³vil */
+.topbar {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.topbar-brand {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.topbar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Icono hamburguesa + animaciÃ³n a â€œXâ€ */
+.topbar-toggle-icon {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  display: block;
+  position: relative;
+  transition: background var(--transition-speed) ease;
+}
+
+.topbar-toggle-icon::before,
+.topbar-toggle-icon::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  position: absolute;
+  left: 0;
+  transition: transform var(--transition-speed) ease;
+}
+
+.topbar-toggle-icon::before { top: -6px; }
+.topbar-toggle-icon::after { top: 6px; }
+
+.topbar-toggle.open .topbar-toggle-icon { background: transparent; }
+.topbar-toggle.open .topbar-toggle-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.topbar-toggle.open .topbar-toggle-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* CSS #08 â€” Iconos sociales */
+.social-icons {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-icons a {
+  color: var(--color-text);
+  font-size: 1.2rem;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.social-icons a:hover { opacity: 0.7; }
+
+/* CSS #09 â€” Accesibilidad mÃ­nima */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px dotted #999;
+  outline-offset: 2px;
+}
+
+/* CSS #10 â€” Responsive */
+@media (max-width: 900px) {
+  .sidebar-left { display: none; }
+
+  /* Panel lateral mÃ³vil (off-canvas) */
+  .sidebar-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background: var(--color-bg);
+    transition: right var(--transition-speed) ease;
+    z-index: 999;
+  }
+
+  .sidebar-right.open { right: 0; }
+
+  /* En mÃ³vil, el contenido interno vuelve a flujo normal */
+  .sidebar-right-inner {
+    position: static;
+    transform: none;
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .panel-brand {
+    display: block;
+    position: relative;
+    margin-bottom: 2rem;
+    padding-right: 2rem; /* espacio para el botÃ³n de cierre */
+  }
+
+  .topbar { display: flex; }
+
+  .content {
+    margin: 0;
+    padding: 4rem 1rem 2rem; /* deja lugar para la topbar */
+  }
+
+  .site-footer {
+    margin: 0;
+    padding: 1.5rem;
+  }
+}
