@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- HTML #01 — Metadatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>espacial xyz</title>
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar móvil -->
+  <header class="topbar">
+    <a href="/" class="topbar-brand">espacial xyz</a>
+    <button id="menu-toggle" class="topbar-toggle" aria-expanded="false" aria-controls="sidebar-right">
+      <span class="topbar-toggle-icon"></span>
+    </button>
+  </header>
+
+  <!-- Columna izquierda: logo -->
+  <aside class="sidebar-left">
+    <a href="/" class="logo-container" aria-label="espacial xyz">
+      <img src="https://i.imgur.com/egEp1gg.png" alt="Logo espacial xyz" class="logo-img">
+      <div class="logo-hover-text">
+        <strong>espacial xyz</strong><br>
+        agencia proyectual de campo expandido que usa la arquitectura como lenguaje
+      </div>
+    </a>
+  </aside>
+
+<!-- Columna derecha: menú -->
+<nav id="sidebar-right" class="sidebar-right" aria-label="Menú principal">
+  <div class="sidebar-right-inner">
+    <!-- Solo visible en móvil -->
+    <div class="panel-brand">
+  <!-- Logo arriba -->
+  <img src="https://i.imgur.com/MztBLWw.png" alt="Logo espacial xyz" class="panel-logo">
+  <!-- Texto -->
+  <p><strong>espacial xyz</strong><br>agencia proyectual de campo expandido</p>
+    </div>
+    
+ <!-- Menú -->
+    <ul class="nav-list">
+       <!-- enlaces -->
+      <li><a href="index.html" class="nav-link">home</a></li>
+      <li><a href="about.html" class="nav-link">acerca de</a></li>
+      <li class="nav-group">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-naturaleza">+ naturaleza</button>
+        <ul id="submenu-naturaleza" class="nav-sublist">
+          <li><a href="#" class="nav-sublink">dispositivo</a></li>
+          <li><a href="#" class="nav-sublink">habitar</a></li>
+          <li><a href="#" class="nav-sublink">territorio</a></li>
+        </ul>
+      </li>
+      <li class="nav-group">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-condicion">+ condición</button>
+        <ul id="submenu-condicion" class="nav-sublist">
+          <li><a href="#" class="nav-sublink">temporal</a></li>
+          <li><a href="#" class="nav-sublink">permanente</a></li>
+          <li><a href="#" class="nav-sublink">especulación</a></li>
+        </ul>
+      </li>
+      <li class="nav-group">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-relacion">+ relación</button>
+        <ul id="submenu-relacion" class="nav-sublist">
+          <li><a href="#" class="nav-sublink">preexistencia</a></li>
+          <li><a href="#" class="nav-sublink">nuevo</a></li>
+          <li><a href="#" class="nav-sublink">patrimonio</a></li>
+        </ul>
+      </li>
+      <li class="nav-group">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-formato">+ formato</button>
+        <ul id="submenu-formato" class="nav-sublist">
+          <li><a href="#" class="nav-sublink">construido</a></li>
+          <li><a href="#" class="nav-sublink">exploración</a></li>
+          <li><a href="#" class="nav-sublink">instalación</a></li>
+          <li><a href="#" class="nav-sublink">intervención</a></li>
+          <li><a href="#" class="nav-sublink">prensa</a></li>
+        </ul>
+      </li>
+    </ul>
+       <!-- Iconos sociales -->
+    <ul class="social-icons">
+      <li><a href="https://instagram.com/espacialxyz" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="https://youtube.com/@espacialxyz" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
+        </div>
+  </nav>
+
+  <!-- Zona central: posts -->
+  <main class="content">
+    <article class="post">
+      <h2>Pabellón Temporal en el Paisaje</h2>
+      <p>Este es el título introductorio a la descripción breve de tu proyecto. Funciona como un resumen en la página principal.</p>
+      <p class="tags">+ exposición + receptor + espacio</p>
+    </article>
+    <article class="post">
+      <h2>Vivienda Permanente con Vistas</h2>
+      <p>Descripción del segundo proyecto, enfocada en la relación con el entorno preexistente y su condición de permanencia.</p>
+      <p class="tags">+ habitar + permanencia + presentación + referencias</p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    &copy; <span id="year"></span> espacial.xyz
+  </footer>
+
+  <!-- JS -->
+  <script src="main.js" defer></script>
+</body>
+</html>
