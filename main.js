@@ -1,4 +1,4 @@
-/* JS #01 â€” Panel mÃ³vil: abrir/cerrar */
+/* JS #01 — Panel móvil: abrir/cerrar */
 const menuToggle = document.getElementById('menu-toggle');
 const panelClose = document.getElementById('panel-close');
 const sidebarRight = document.getElementById('sidebar-right');
@@ -18,7 +18,7 @@ if (panelClose && sidebarRight) {
   });
 }
 
-/* JS #02 â€” SubmenÃºs accesibles con animaciÃ³n */
+/* JS #02 — Submenús accesibles con animación */
 const navToggles = document.querySelectorAll('.nav-toggle');
 
 navToggles.forEach(toggle => {
@@ -40,8 +40,9 @@ if (menuToggle) {
 }
 
 
-/* JS #03 â€” AÃ±o dinÃ¡mico en footer */
+/* JS #03 — Año dinámico en footer */
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
