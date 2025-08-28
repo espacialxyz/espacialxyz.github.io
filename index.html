@@ -97,21 +97,36 @@ layout: default
 
   <!-- Zona central: posts -->
   <main>
-{% for post in site.posts %}
-  <div class="post">
-    <div class="post-image-container">
-      <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
-      <div class="post-overlay">
-        <h2>{{ post.title }}</h2>
-        <ul class="post-tags">
-          {% for tag in post.tags %}
-            <li>+ {{ tag }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-{% endfor %}
+<div class="post">
+  <img src="/images/proyecto1.jpg" alt="Título del proyecto">
+  <h2>TÍTULO DEL PROYECTO</h2>
+  <ul class="post-tags">
+    <li>+ categoría 1</li>
+    <li>+ categoría 2</li>
+    <li>+ categoría 3</li>
+    <li>+ categoría 4</li>
+  </ul>
+</div>
+    <div class="post">
+  <img src="/images/proyecto1.jpg" alt="Título del proyecto">
+  <h2>TÍTULO DEL PROYECTO</h2>
+  <ul class="post-tags">
+    <li>+ categoría 1</li>
+    <li>+ categoría 2</li>
+    <li>+ categoría 3</li>
+    <li>+ categoría 4</li>
+  </ul>
+</div>
+    <div class="post">
+  <img src="/images/proyecto1.jpg" alt="Título del proyecto">
+  <h2>TÍTULO DEL PROYECTO</h2>
+  <ul class="post-tags">
+    <li>+ categoría 1</li>
+    <li>+ categoría 2</li>
+    <li>+ categoría 3</li>
+    <li>+ categoría 4</li>
+  </ul>
+</div>
   </main>
 
 
@@ -124,5 +139,6 @@ layout: default
   <script src="main.js" defer></script>
 </body>
 </html>
+
 
 
